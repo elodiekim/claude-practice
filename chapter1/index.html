@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수정 | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">SJ.</a>
+      <ul class="nav-links">
+        <li><a href="#about">소개</a></li>
+        <li><a href="#experience">경력</a></li>
+        <li><a href="#skills">기술</a></li>
+        <li><a href="#projects">프로젝트</a></li>
+        <li><a href="#education">학력</a></li>
+        <li><a href="#contact">연락처</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-greeting">안녕하세요, 저는</p>
+      <h1 class="hero-name">홍수정</h1>
+      <p class="hero-title">Software Engineer</p>
+      <p class="hero-desc">사용자 경험을 중심으로 생각하며, 깔끔하고 효율적인 코드를 작성합니다.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">연락하기</a>
+        <a href="#projects" class="btn btn-outline">프로젝트 보기</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>스크롤</span>
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">소개</h2>
+      <div class="about-grid">
+        <div class="about-image">
+          <div class="about-image-placeholder">
+            <span>PHOTO</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <p>
+            3년 이상의 웹 개발 경험을 가진 소프트웨어 엔지니어입니다.
+            프론트엔드와 백엔드 모두에 대한 폭넓은 이해를 바탕으로
+            사용자 중심의 서비스를 만들어왔습니다.
+          </p>
+          <p>
+            새로운 기술을 배우고 적용하는 것을 즐기며,
+            팀과의 협업을 통해 더 나은 결과물을 만들어내는 것을 좋아합니다.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">경력 (년)</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">10+</span>
+              <span class="stat-label">프로젝트</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">5+</span>
+              <span class="stat-label">수료/자격증</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <h2 class="section-title">경력</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>시니어 프론트엔드 개발자</h3>
+              <span class="timeline-date">2024.01 — 현재</span>
+            </div>
+            <p class="timeline-company">ABC 테크놀로지</p>
+            <ul class="timeline-details">
+              <li>React 기반 대시보드 서비스 개발 및 유지보수</li>
+              <li>성능 최적화를 통해 페이지 로딩 속도 40% 개선</li>
+              <li>주니어 개발자 멘토링 및 코드 리뷰 진행</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>풀스택 개발자</h3>
+              <span class="timeline-date">2022.03 — 2023.12</span>
+            </div>
+            <p class="timeline-company">XYZ 스타트업</p>
+            <ul class="timeline-details">
+              <li>Node.js + React 기반 SaaS 플랫폼 개발</li>
+              <li>RESTful API 설계 및 데이터베이스 스키마 설계</li>
+              <li>CI/CD 파이프라인 구축 및 자동화</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>주니어 웹 개발자</h3>
+              <span class="timeline-date">2021.06 — 2022.02</span>
+            </div>
+            <p class="timeline-company">DEF 솔루션즈</p>
+            <ul class="timeline-details">
+              <li>웹 애플리케이션 프론트엔드 개발</li>
+              <li>반응형 웹 디자인 구현</li>
+              <li>사내 디자인 시스템 컴포넌트 개발 참여</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="container">
+      <h2 class="section-title">기술 스택</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Frontend</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">HTML / CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">Vue.js</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Backend</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MongoDB</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>DevOps & Tools</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">GitHub Actions</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Jira</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <h2 class="section-title">프로젝트</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-image">
+            <div class="project-image-placeholder">01</div>
+          </div>
+          <div class="project-info">
+            <h3>E-Commerce 플랫폼</h3>
+            <p>Next.js와 Stripe를 활용한 풀스택 이커머스 웹 애플리케이션</p>
+            <div class="project-tags">
+              <span>Next.js</span>
+              <span>TypeScript</span>
+              <span>Stripe</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">GitHub &#8599;</a>
+              <a href="#" class="project-link">Live Demo &#8599;</a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image">
+            <div class="project-image-placeholder">02</div>
+          </div>
+          <div class="project-info">
+            <h3>실시간 채팅 앱</h3>
+            <p>WebSocket 기반의 실시간 메시징 서비스</p>
+            <div class="project-tags">
+              <span>React</span>
+              <span>Socket.io</span>
+              <span>Node.js</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">GitHub &#8599;</a>
+              <a href="#" class="project-link">Live Demo &#8599;</a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image">
+            <div class="project-image-placeholder">03</div>
+          </div>
+          <div class="project-info">
+            <h3>AI 이미지 생성기</h3>
+            <p>OpenAI API를 활용한 텍스트-이미지 변환 웹 서비스</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>FastAPI</span>
+              <span>React</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link">GitHub &#8599;</a>
+              <a href="#" class="project-link">Live Demo &#8599;</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <div class="container">
+      <h2 class="section-title">학력 & 자격증</h2>
+      <div class="education-grid">
+        <div class="education-group">
+          <h3>학력</h3>
+          <div class="education-item">
+            <div class="education-header">
+              <h4>컴퓨터공학 학사</h4>
+              <span class="education-date">2017 — 2021</span>
+            </div>
+            <p>서울대학교</p>
+          </div>
+        </div>
+        <div class="education-group">
+          <h3>자격증 & 수료</h3>
+          <div class="education-item">
+            <div class="education-header">
+              <h4>정보처리기사</h4>
+              <span class="education-date">2021</span>
+            </div>
+            <p>한국산업인력공단</p>
+          </div>
+          <div class="education-item">
+            <div class="education-header">
+              <h4>AWS Solutions Architect</h4>
+              <span class="education-date">2023</span>
+            </div>
+            <p>Amazon Web Services</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="contact">
+    <div class="container">
+      <h2 class="section-title section-title-light">연락처</h2>
+      <p class="contact-desc">프로젝트 협업이나 채용 관련 문의를 환영합니다.</p>
+      <div class="contact-grid">
+        <a href="mailto:sujung@example.com" class="contact-card">
+          <div class="contact-icon">&#9993;</div>
+          <h3>Email</h3>
+          <p>sujung@example.com</p>
+        </a>
+        <a href="https://github.com/" class="contact-card">
+          <div class="contact-icon">&#128187;</div>
+          <h3>GitHub</h3>
+          <p>github.com/sujung</p>
+        </a>
+        <a href="https://linkedin.com/" class="contact-card">
+          <div class="contact-icon">&#128101;</div>
+          <h3>LinkedIn</h3>
+          <p>linkedin.com/in/sujung</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 홍수정. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
