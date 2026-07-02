@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2024년 4분기 영업 실적 보고 - Version A</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Malgun Gothic', sans-serif; background: #f0f4f8; }
+
+  .presentation { width: 100%; max-width: 960px; margin: 0 auto; padding: 20px; }
+
+  .slide {
+    width: 100%;
+    aspect-ratio: 16/9;
+    margin-bottom: 32px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(30, 80, 160, 0.15);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 48px 60px;
+  }
+
+  .slide-number {
+    position: absolute;
+    bottom: 18px;
+    right: 28px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+  }
+
+  /* ── Slide 1: 제목 ── */
+  .slide-1 {
+    background: linear-gradient(135deg, #1a56db 0%, #0d3b8e 60%, #0a2c6e 100%);
+    text-align: center;
+  }
+  .slide-1 .tag {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #93c5fd;
+    margin-bottom: 20px;
+  }
+  .slide-1 h1 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .slide-1 .divider {
+    width: 60px;
+    height: 3px;
+    background: #60a5fa;
+    margin: 20px auto;
+    border-radius: 2px;
+  }
+  .slide-1 .meta {
+    font-size: 15px;
+    color: #bfdbfe;
+    line-height: 2;
+  }
+  .slide-1 .meta strong { color: #fff; }
+
+  /* ── Slide 2: 핵심 지표 ── */
+  .slide-2 { background: #fff; align-items: stretch; }
+  .slide-header {
+    width: 100%;
+    margin-bottom: 36px;
+  }
+  .slide-header h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a56db;
+    border-left: 5px solid #1a56db;
+    padding-left: 16px;
+  }
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+  }
+  .kpi-card {
+    background: #eff6ff;
+    border-radius: 10px;
+    padding: 28px 20px;
+    text-align: center;
+    border-top: 4px solid #1a56db;
+  }
+  .kpi-card .kpi-label {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .kpi-card .kpi-value {
+    font-size: 40px;
+    font-weight: 800;
+    color: #1a56db;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .kpi-card .kpi-sub {
+    font-size: 12px;
+    color: #9ca3af;
+  }
+  .kpi-card.highlight { background: #1a56db; border-top-color: #60a5fa; }
+  .kpi-card.highlight .kpi-label { color: #bfdbfe; }
+  .kpi-card.highlight .kpi-value { color: #fff; }
+  .kpi-card.highlight .kpi-sub { color: #93c5fd; }
+
+  /* ── Slide 3: 제품별 매출 ── */
+  .slide-3 { background: #fff; align-items: stretch; }
+  .bar-chart { width: 100%; }
+  .bar-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+    gap: 16px;
+  }
+  .bar-label {
+    width: 130px;
+    font-size: 13px;
+    color: #374151;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .bar-track {
+    flex: 1;
+    height: 40px;
+    background: #e0ebff;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #1a56db, #60a5fa);
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    transition: width 0.6s ease;
+  }
+  .bar-fill.it { background: linear-gradient(90deg, #0d3b8e, #1a56db); }
+  .bar-fill.furniture { background: linear-gradient(90deg, #3b82f6, #93c5fd); }
+  .bar-fill span { font-size: 13px; color: #fff; font-weight: 700; }
+  .bar-amount {
+    width: 60px;
+    font-size: 14px;
+    color: #1a56db;
+    font-weight: 700;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* ── Slide 4: 주요 성과 ── */
+  .slide-4 {
+    background: linear-gradient(135deg, #1a56db 0%, #0d3b8e 100%);
+    align-items: stretch;
+  }
+  .slide-4 .slide-header h2 { color: #fff; border-left-color: #60a5fa; }
+  .achievement-list { width: 100%; display: flex; flex-direction: column; gap: 18px; }
+  .achievement-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 20px 24px;
+    backdrop-filter: blur(4px);
+  }
+  .achievement-num {
+    width: 36px;
+    height: 36px;
+    background: #60a5fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .achievement-text h3 { font-size: 16px; color: #fff; font-weight: 700; margin-bottom: 4px; }
+  .achievement-text p { font-size: 13px; color: #bfdbfe; }
+
+  /* ── Slide 5: 다음 분기 목표 ── */
+  .slide-5 { background: #fff; align-items: stretch; }
+  .goal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    width: 100%;
+  }
+  .goal-card {
+    border: 2px solid #e0ebff;
+    border-radius: 10px;
+    padding: 24px 18px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .goal-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #1a56db, #60a5fa);
+  }
+  .goal-icon { font-size: 28px; margin-bottom: 10px; }
+  .goal-card h3 { font-size: 14px; color: #374151; font-weight: 700; margin-bottom: 8px; }
+  .goal-card .goal-value { font-size: 28px; font-weight: 800; color: #1a56db; margin-bottom: 6px; }
+  .goal-card p { font-size: 12px; color: #9ca3af; }
+</style>
+</head>
+<body>
+<div class="presentation">
+
+  <!-- Slide 1: 제목 -->
+  <div class="slide slide-1">
+    <div class="tag">Sales Performance Report</div>
+    <h1>2024년 4분기<br>영업 실적 보고</h1>
+    <div class="divider"></div>
+    <div class="meta">
+      <strong>발표자</strong> : 영업기획팀 김수진 팀장<br>
+      <strong>발표일</strong> : 2025년 1월 15일<br>
+      <strong>대상</strong> : 경영진 및 영업본부 임직원
+    </div>
+    <div class="slide-number">01 / 05</div>
+  </div>
+
+  <!-- Slide 2: 핵심 지표 -->
+  <div class="slide slide-2">
+    <div class="slide-header">
+      <h2>핵심 성과 지표 (KPI)</h2>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card highlight">
+        <div class="kpi-label">매출 목표 달성률</div>
+        <div class="kpi-value">112<span style="font-size:22px">%</span></div>
+        <div class="kpi-sub">목표 대비 +12% 초과 달성</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">신규 고객 수</div>
+        <div class="kpi-value">847</div>
+        <div class="kpi-sub">전 분기 대비 +23% 증가</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">영업이익률</div>
+        <div class="kpi-value">18.3<span style="font-size:22px">%</span></div>
+        <div class="kpi-sub">업계 평균 12.1% 대비 +6.2%p</div>
+      </div>
+    </div>
+    <div class="slide-number" style="color:#d1d5db">02 / 05</div>
+  </div>
+
+  <!-- Slide 3: 제품별 매출 -->
+  <div class="slide slide-3">
+    <div class="slide-header">
+      <h2>제품별 매출 비교</h2>
+    </div>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-label">사무용품</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:58%"><span>2억 4천만원</span></div>
+        </div>
+        <div class="bar-amount">2.4억</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">IT 기기</div>
+        <div class="bar-track">
+          <div class="bar-fill it" style="width:100%"><span>4억 1천만원</span></div>
+        </div>
+        <div class="bar-amount">4.1억</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">가구·인테리어</div>
+        <div class="bar-track">
+          <div class="bar-fill furniture" style="width:44%"><span>1억 8천만원</span></div>
+        </div>
+        <div class="bar-amount">1.8억</div>
+      </div>
+    </div>
+    <div style="width:100%;margin-top:16px;padding-top:12px;border-top:1px solid #e0ebff;display:flex;justify-content:flex-end">
+      <span style="font-size:13px;color:#1a56db;font-weight:700">총 매출 합계: 8억 3천만원</span>
+    </div>
+    <div class="slide-number" style="color:#d1d5db">03 / 05</div>
+  </div>
+
+  <!-- Slide 4: 주요 성과 -->
+  <div class="slide slide-4">
+    <div class="slide-header">
+      <h2>4분기 주요 성과</h2>
+    </div>
+    <div class="achievement-list">
+      <div class="achievement-item">
+        <div class="achievement-num">1</div>
+        <div class="achievement-text">
+          <h3>연간 누적 최고 매출 기록 달성</h3>
+          <p>2024년 총 매출 32억원으로 전년 대비 28% 성장, 창사 이래 최대 실적</p>
+        </div>
+      </div>
+      <div class="achievement-item">
+        <div class="achievement-num">2</div>
+        <div class="achievement-text">
+          <h3>신규 대형 거래처 15개 사 확보</h3>
+          <p>중견기업 이상 B2B 고객 집중 공략으로 계약 규모 평균 1.8억원 달성</p>
+        </div>
+      </div>
+      <div class="achievement-item">
+        <div class="achievement-num">3</div>
+        <div class="achievement-text">
+          <h3>고객 만족도 92점 달성 (목표 85점)</h3>
+          <p>AS 응답 시간 단축 및 전담 AM 배정으로 재구매율 68%까지 향상</p>
+        </div>
+      </div>
+    </div>
+    <div class="slide-number">04 / 05</div>
+  </div>
+
+  <!-- Slide 5: 다음 분기 목표 -->
+  <div class="slide slide-5">
+    <div class="slide-header">
+      <h2>2025년 1분기 목표 및 계획</h2>
+    </div>
+    <div class="goal-grid">
+      <div class="goal-card">
+        <div class="goal-icon">📈</div>
+        <h3>매출 목표</h3>
+        <div class="goal-value">10억</div>
+        <p>전 분기 대비 20% 상향<br>IT기기 부문 집중 확대</p>
+      </div>
+      <div class="goal-card">
+        <div class="goal-icon">👥</div>
+        <h3>신규 고객 확보</h3>
+        <div class="goal-value">1,000</div>
+        <p>온라인 리드 채널 강화<br>파트너사 협업 확대</p>
+      </div>
+      <div class="goal-card">
+        <div class="goal-icon">💼</div>
+        <h3>영업이익률 목표</h3>
+        <div class="goal-value">20%</div>
+        <p>원가 구조 개선<br>고마진 제품 믹스 최적화</p>
+      </div>
+    </div>
+    <div style="width:100%;margin-top:20px;background:#eff6ff;border-radius:8px;padding:14px 20px;font-size:13px;color:#1a56db;font-weight:500">
+      ※ 세부 실행 계획은 부서별 1월 사업계획서를 통해 별도 공유 예정
+    </div>
+    <div class="slide-number" style="color:#d1d5db">05 / 05</div>
+  </div>
+
+</div>
+</body>
+</html>
